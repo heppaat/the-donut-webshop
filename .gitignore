@@ -20,6 +20,13 @@
 # production
 /build
 
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
 # misc
 .DS_Store
 *.pem
