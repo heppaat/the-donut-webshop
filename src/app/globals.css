@@ -1,34 +1,96 @@
 @import "tailwindcss";
 
 :root {
-    --primary: #d551c1;     /* Magenta */
-    --secondary: #1ccbfd;   /* Turquoise */
-    --background: #fcfcfc;  /* Off-white */
-    --foreground: #2d2d2d;  /* Dark gray for text */
+    /* DONUT SHOP BRAND COLORS */
+    --primary: #d551c1;         /* magenta */
+    --primary-foreground: #ffffff;
+    --secondary: #1ccbfd;       /* turquoise */
+    --secondary-foreground: #ffffff;
+    --background: #fcfcfc;      /* off-white */
+    --foreground: #2d2d2d;      /* dark gray text */
 
-    /* Pure colors for special cases */
+    /* pure colors */
     --white: #ffffff;
     --black: #000000;
+
+    /* shadcn/ui component colors (keeping neutral grays) */
+    --card: #ffffff;
+    --card-foreground: #2d2d2d;
+    --popover: #ffffff;
+    --popover-foreground: #2d2d2d;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --accent: #f1f5f9;
+    --accent-foreground: #2d2d2d;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #64748b;
+
+    /* Radius for rounded corners */
+    --radius: 0.625rem;
+
+    /* Chart colors */
+    --chart-1: #d551c1;  /* magenta */
+    --chart-2: #1ccbfd;  /* turquoise */
+    --chart-3: #8b5cf6;
+    --chart-4: #06b6d4;
+    --chart-5: #10b981;
 }
 
 @theme inline {
+    /* Brand colors for Tailwind */
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --color-primary: var(--primary);
-    --color-secondary: var(--secondary);
 
-    /* Font family for Tailwind - Tailwind 4 syntax */
+    /* Component colors */
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    /* Chart colors */
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    /* Border radius */
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+
+    /* Montserrat font */
     --font-family-sans: 'Montserrat', system-ui, sans-serif;
-}
-
-
-body {
-  background: var(--background);
-  color: var(--foreground);
 }
 
 html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
 }
