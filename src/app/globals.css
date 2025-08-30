@@ -6,7 +6,7 @@
     --primary-foreground: #ffffff;
     --secondary: #1ccbfd;       /* turquoise */
     --secondary-foreground: #ffffff;
-    --background: #fcfcfc;      /* off-white */
+    --background: #fcfcfc; /* off-white */
     --foreground: #2d2d2d;      /* dark gray text */
 
     /* pure colors */
@@ -93,4 +93,45 @@ html {
     body {
         @apply bg-background text-foreground;
     }
+}
+
+
+/*NavBar underline effect*/
+.nav-link {
+    @apply relative bg-transparent text-foreground hover:text-primary transition-colors duration-200;
+}
+
+.nav-link::after {
+    content: '';
+    @apply absolute bottom-2 left-0 h-0.5 bg-primary transition-all duration-200;
+    width: 0;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Reverse animation on mouse leave */
+.nav-link:not(:hover)::after {
+    @apply transition-all duration-300;
+    width: 0;
+    right: 0;
+    left: auto;
+}
+
+/*Logo roll in animation*/
+@keyframes logoSlideInBounce {
+    0% {
+        transform: translateX(0%) translateY(0%) rotate(100deg);
+    }
+    60% {
+        transform: translateX(140%) translateY(0%) rotate(390deg);
+    }
+    100% {
+        transform: translateX(135%) translateY(0%) rotate(360deg);
+    }
+}
+
+.logo-slide-in {
+    animation: logoSlideInBounce 0.8s cubic-bezier(0, -0.15, 0.25, 1.25) forwards;
 }
