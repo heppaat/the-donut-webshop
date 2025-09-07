@@ -122,16 +122,32 @@ html {
 /*Logo roll in animation*/
 @keyframes logoSlideInBounce {
     0% {
-        transform: translateX(0%) translateY(0%) rotate(100deg);
+        transform: translateX(-50%) translateY(0%) rotate(100deg);
     }
     60% {
-        transform: translateX(140%) translateY(0%) rotate(390deg);
+        transform: translateX(140%) translateY(0%) rotate(380deg);
     }
     100% {
         transform: translateX(135%) translateY(0%) rotate(360deg);
     }
 }
+/*Logo roll out animation*/
+@keyframes logoSlideOutBounce {
+    0% {
+        transform: translateX(135%) translateY(0%) rotate(360deg);
+    }
+
+    100% {
+        transform: translateX(-100%) translateY(0%) rotate(0deg);
+    }
+}
+
+
 
 .logo-slide-in {
-    animation: logoSlideInBounce 0.8s cubic-bezier(0, -0.15, 0.25, 1.25) forwards;
+    animation: logoSlideInBounce 1.2s cubic-bezier(0, -0.15, 0.25, 1.25) forwards;
+}
+
+.logo-slide-out {
+    animation: logoSlideOutBounce 1.2s cubic-bezier(0.75, 2, 0.25, 1.5) forwards;
 }

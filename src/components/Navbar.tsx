@@ -27,13 +27,13 @@ const Navbar = () => {
   if (isLandingPage) {
     return (
       <nav className="fixed bg-white top-0 left-0 right-0 z-10 shadow-sm">
-        <div className="max-w-6xl mx-auto py-4 px-6 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto py-3 px-6 flex items-center justify-between">
           <div className="relative w-[200px] h-[50px] overflow-hidden">
             <Logo
               logoHeight="1.5rem"
               isLink
               className={cn(
-                "absolute top-1/2  -translate-y-1/2 transition-all duration-300 ease-out",
+                "absolute top-1/2 -translate-y-1/2 transition-all duration-400",
                 isScrolled
                   ? "left-full translate-x-full"
                   : "left-1/2 -translate-x-1/2"
@@ -43,12 +43,9 @@ const Navbar = () => {
               logoHeight="3rem"
               isJustLogo
               isLink
-              className={cn(
-                isScrolled
-                  ? "logo-slide-in"
-                  : "absolute left-0 top-0 -translate-x-full"
-              )}
+              className={cn(isScrolled ? "logo-slide-in" : "logo-slide-out")}
             />
+            {/*absolute left-0 top-0 -translate-x-full*/}
           </div>
           <div className="flex items-center gap-16">
             <div className="flex gap-8">
