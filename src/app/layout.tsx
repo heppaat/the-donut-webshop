@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import { AuthProvider } from "@/contexts/AuthContext";
+import Navbar from "@/components/navbar";
+import { ReactNode } from "react";
+import { NavbarProvider } from "@/contexts/NavbarContext";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -21,13 +24,17 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={`${montserrat.variable} font-sans antialiased`}>
-        <Navbar />
-        {children}
+        <AuthProvider>
+          <NavbarProvider>
+            <Navbar />
+          </NavbarProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
