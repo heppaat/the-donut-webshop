@@ -7,14 +7,15 @@ import useNavbarContext from "@/hooks/useNavbarContext";
 import styles from "./MobileMenuPanel.module.css";
 
 function MobileMenuPanel() {
-  const { isMobileMenuOpen } = useNavbarContext();
+  const { isMobileMenuOpen, isClosing } = useNavbarContext();
 
   return (
     <div
       className={cn(
         "md:hidden",
         styles.panel,
-        isMobileMenuOpen ? "block" : "hidden"
+        isMobileMenuOpen ? "block" : "hidden",
+        isClosing && styles.closing
       )}
     >
       <div className="px-2 pt-2 pb-3 space-y-6 bg-white border-t border-gray-200 shadow-lg">
