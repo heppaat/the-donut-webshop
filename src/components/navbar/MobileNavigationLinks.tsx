@@ -27,7 +27,7 @@ function MobileNavigationLinks({
         >
           <Button
             variant="ghost"
-            className="w-full justify-start text-left p-3 h-auto text-base font-medium"
+            className="w-full p-3 h-auto text-base font-medium"
             size="lg"
           >
             {item.name}
