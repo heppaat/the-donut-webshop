@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Design tokens — Tailwind v4 CSS-first config
+   Raw brand values live in :root; @theme inline exposes them to Tailwind
+   so they generate utilities (bg-primary, text-foreground, font-display, …).
+   ========================================================================== */
+
+:root {
+  /* DONUT SHOP BRAND COLORS */
+  --primary: #d551c1; /* magenta */
+  --primary-foreground: #ffffff;
+  --secondary: #1ccbfd; /* turquoise */
+  --secondary-foreground: #ffffff;
+  --background: #fcfcfc; /* off-white */
+  --foreground: #1a1a1a; /* dark gray text */
+
+  /* pure colors */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* shadcn/ui component colors (keeping neutral grays) */
+  --card: #ffffff;
+  --card-foreground: #2d2d2d;
+  --popover: #ffffff;
+  --popover-foreground: #2d2d2d;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #f1f5f9;
+  --accent-foreground: #2d2d2d;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #64748b;
+
+  /* Radius for rounded corners */
+  --radius: 0.625rem;
+
+  /* Chart colors */
+  --chart-1: #d551c1; /* magenta */
+  --chart-2: #1ccbfd; /* turquoise */
+  --chart-3: #8b5cf6;
+  --chart-4: #06b6d4;
+  --chart-5: #10b981;
+}
+
+@theme inline {
+  /* Brand colors for Tailwind */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Component colors */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Chart colors */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Border radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Font families (loaded via next/font in app/layout.tsx) */
+  --font-sans:
+    var(--font-montserrat), system-ui, sans-serif; /* body copy -> font-sans */
+  --font-display:
+    var(--font-archivo-black), system-ui, sans-serif; /* headlines -> font-display */
+  --font-accent:
+    var(--font-playfair), Georgia, serif; /* italic accents -> font-accent */
+  --font-mono:
+    var(--font-jetbrains-mono), ui-monospace, monospace; /* labels/micro-copy -> font-mono */
+}

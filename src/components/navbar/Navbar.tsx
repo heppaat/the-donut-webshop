@@ -1,12 +1,22 @@
-import MobileMenuPanel from "@/components/navbar/MobileMenuPanel";
-import DesktopNavbar from "@/components/navbar/DesktopNavbar";
+import { ScrollHeader } from "@/components/navbar/ScrollHeader";
+import { NavBrand } from "@/components/navbar/NavBrand";
+import { DynamicIsland } from "@/components/navbar/DynamicIsland";
+import { NavActions } from "@/components/navbar/NavActions";
 
 function Navbar() {
   return (
-    <nav className="fixed bg-white top-0 left-0 right-0 z-10 shadow-sm">
-      <DesktopNavbar />
-      <MobileMenuPanel />
-    </nav>
+    <ScrollHeader>
+      <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
+        {/* Left: logo + wordmark */}
+        <NavBrand />
+
+        {/* Center: dynamic-island nav pill (desktop only) */}
+        <DynamicIsland />
+
+        {/* Right: cart + CTA */}
+        <NavActions />
+      </div>
+    </ScrollHeader>
   );
 }
 

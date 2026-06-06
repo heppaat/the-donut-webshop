@@ -1,84 +1,11 @@
 @import "tailwindcss";
+@import "./theme.css";       /* design tokens (@theme) */
+@import "./animations.css";  /* keyframes + animation classes */
+@import "./components.css";  /* reusable component classes (.nav-link …) */
 
-:root {
-    /* DONUT SHOP BRAND COLORS */
-    --primary: #d551c1;         /* magenta */
-    --primary-foreground: #ffffff;
-    --secondary: #1ccbfd;       /* turquoise */
-    --secondary-foreground: #ffffff;
-    --background: #fcfcfc; /* off-white */
-    --foreground: #2d2d2d;      /* dark gray text */
-
-    /* pure colors */
-    --white: #ffffff;
-    --black: #000000;
-
-    /* shadcn/ui component colors (keeping neutral grays) */
-    --card: #ffffff;
-    --card-foreground: #2d2d2d;
-    --popover: #ffffff;
-    --popover-foreground: #2d2d2d;
-    --muted: #f1f5f9;
-    --muted-foreground: #64748b;
-    --accent: #f1f5f9;
-    --accent-foreground: #2d2d2d;
-    --destructive: #ef4444;
-    --destructive-foreground: #ffffff;
-    --border: #e2e8f0;
-    --input: #e2e8f0;
-    --ring: #64748b;
-
-    /* Radius for rounded corners */
-    --radius: 0.625rem;
-
-    /* Chart colors */
-    --chart-1: #d551c1;  /* magenta */
-    --chart-2: #1ccbfd;  /* turquoise */
-    --chart-3: #8b5cf6;
-    --chart-4: #06b6d4;
-    --chart-5: #10b981;
-}
-
-@theme inline {
-    /* Brand colors for Tailwind */
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-
-    /* Component colors */
-    --color-card: var(--card);
-    --color-card-foreground: var(--card-foreground);
-    --color-popover: var(--popover);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-destructive: var(--destructive);
-    --color-destructive-foreground: var(--destructive-foreground);
-    --color-border: var(--border);
-    --color-input: var(--input);
-    --color-ring: var(--ring);
-
-    /* Chart colors */
-    --color-chart-1: var(--chart-1);
-    --color-chart-2: var(--chart-2);
-    --color-chart-3: var(--chart-3);
-    --color-chart-4: var(--chart-4);
-    --color-chart-5: var(--chart-5);
-
-    /* Border radius */
-    --radius-sm: calc(var(--radius) - 4px);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) + 4px);
-
-    /* Montserrat font */
-    --font-family-sans: 'Montserrat', system-ui, sans-serif;
-}
+/* ==========================================================================
+   Global base styles
+   ========================================================================== */
 
 html {
     scroll-behavior: smooth;
@@ -93,61 +20,4 @@ html {
     body {
         @apply bg-background text-foreground;
     }
-}
-
-
-/*NavBar underline effect*/
-.nav-link {
-    @apply relative bg-transparent text-foreground hover:text-primary transition-colors duration-200;
-}
-
-.nav-link::after {
-    content: '';
-    @apply absolute bottom-2 left-0 h-0.5 bg-primary transition-all duration-200;
-    width: 0;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-/* Reverse animation on mouse leave */
-.nav-link:not(:hover)::after {
-    @apply transition-all duration-300;
-    width: 0;
-    right: 0;
-    left: auto;
-}
-
-/*Logo roll in animation*/
-@keyframes logoSlideInBounce {
-    0% {
-        transform: translateX(-50%) translateY(0%) rotate(100deg);
-    }
-    60% {
-        transform: translateX(140%) translateY(0%) rotate(380deg);
-    }
-    100% {
-        transform: translateX(135%) translateY(0%) rotate(360deg);
-    }
-}
-/*Logo roll out animation*/
-@keyframes logoSlideOutBounce {
-    0% {
-        transform: translateX(135%) translateY(0%) rotate(360deg);
-    }
-
-    100% {
-        transform: translateX(-100%) translateY(0%) rotate(0deg);
-    }
-}
-
-
-
-.logo-slide-in {
-    animation: logoSlideInBounce 1.2s cubic-bezier(0, -0.15, 0.25, 1.25) forwards;
-}
-
-.logo-slide-out {
-    animation: logoSlideOutBounce 1.2s cubic-bezier(0.75, 2, 0.25, 1.5) forwards;
 }

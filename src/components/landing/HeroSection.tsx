@@ -1,4 +1,3 @@
-import Video from "@/components/video/Video";
 import Image from "next/image";
 import HeroRoad from "/public/road-desktop.png";
 import EatText from "/public/eat.png";
