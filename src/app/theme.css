@@ -80,6 +80,28 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
+  /* Brutalist offset shadows — flat, zero-blur (the neo-brutalist signature).
+     -sm: small elements (nav pill) · base: cards · -lg: hover / emphasis.
+     → shadow-brutal-sm / shadow-brutal / shadow-brutal-lg */
+  --shadow-brutal-sm: 4px 4px 0 var(--foreground);
+  --shadow-brutal: 6px 6px 0 var(--foreground);
+  --shadow-brutal-lg: 12px 12px 0 var(--foreground);
+
+  /* Letter spacing for the uppercase "spec-sheet" labels. em is the right unit
+     for letter-spacing — it scales with the font size. → tracking-label */
+  --tracking-label: 0.2em;
+
+  /* Display headings (every h2) — shared so all the big chunky headlines match.
+     line-height stays unitless (best practice: it multiplies the element's own
+     font-size and inherits cleanly); tracking is em so it scales with the
+     heading size. → leading-display / tracking-display */
+  --leading-display: 0.95;
+  --tracking-display: -0.03em;
+
+  /* Micro-label font size (tags, fine print) — extends the scale below text-xs.
+     → text-2xs */
+  --text-2xs: 0.625rem;
+
   /* Font families (loaded via next/font in app/layout.tsx) */
   --font-sans:
     var(--font-montserrat), system-ui, sans-serif; /* body copy -> font-sans */

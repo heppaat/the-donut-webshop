@@ -47,8 +47,8 @@ export default function DonutSection() {
     <div ref={wrapperRef} className="relative h-[200dvh]">
       <section className="sticky top-0 h-dvh w-full bg-secondary bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.7),transparent_60%)]">
         <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
-          <Environment preset="studio" environmentIntensity={0.8} />
-          <pointLight position={[0, 0, -3]} intensity={50} color="white" />
+          <Environment preset="studio" environmentIntensity={0.6} />
+          <pointLight position={[0, 0, -3]} intensity={10} color="white" />
           <Suspense fallback={null}>
             <DonutModel targetRotation={targetRotation} />
           </Suspense>

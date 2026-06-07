@@ -3,6 +3,7 @@ import HeroRoad from "/public/road-desktop.png";
 import EatText from "/public/eat.png";
 import DonutText from "/public/donut.png";
 import DonutImage from "/public/donut_square.png";
+import { Marquee } from "@/components/landing/Marquee";
 
 function HeroSection() {
   return (
@@ -48,13 +49,16 @@ function HeroSection() {
           </div>
         </div>*/}
       </div>
-      <div className="absolute bottom-0 left-0 right-0 max-w-7xl mx-auto">
-        <Image
-          src={HeroRoad}
-          alt="hero bottom road"
-          priority
-          className="w-full h-auto max-h-[100px]"
-        />
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <div className="mx-auto max-w-7xl">
+          <Image
+            src={HeroRoad}
+            alt="hero bottom road"
+            priority
+            className="w-full h-auto max-h-[100px]"
+          />
+        </div>
+        <Marquee />
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ export const NavBrand = () => {
   return (
     <div className="flex items-center gap-4">
       <Logo logoHeight="46px" isLink isJustLogo />
-      <p className="font-display text-xl text-foreground">donut shop</p>
+      <p className="font-display text-2xl text-foreground">donut shop</p>
     </div>
   );
 };

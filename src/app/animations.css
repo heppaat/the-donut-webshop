@@ -32,3 +32,47 @@
 .logo-slide-out {
     animation: logoSlideOutBounce 1.2s cubic-bezier(0.75, 2, 0.25, 1.5) forwards;
 }
+
+/* Marquee — infinite horizontal scroll strip.
+   The track holds 4 identical copies; translating one quarter (= one copy)
+   makes the loop seamless. Duration is set per-instance via --marquee-duration. */
+@keyframes marquee-left {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-25%); }
+}
+@keyframes marquee-right {
+    from { transform: translateX(-25%); }
+    to   { transform: translateX(0); }
+}
+
+.marquee-track {
+    animation: marquee-left var(--marquee-duration, 30s) linear infinite;
+}
+.marquee-track[data-reverse="true"] {
+    animation-name: marquee-right;
+}
+
+/* Pause on hover, and don't animate for reduced-motion users */
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}
+
+/* Slow continuous spin — sticker badges (About section) */
+@keyframes spinSlow {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.animate-spin-slow {
+    animation: spinSlow 14s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+    .animate-spin-slow {
+        animation: none;
+    }
+}

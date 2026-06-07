@@ -6,7 +6,7 @@ import { NavActions } from "@/components/navbar/NavActions";
 function Navbar() {
   return (
     <ScrollHeader>
-      <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
+      <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6">
         {/* Left: logo + wordmark */}
         <NavBrand />
 

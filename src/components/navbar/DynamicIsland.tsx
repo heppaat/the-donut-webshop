@@ -7,7 +7,7 @@ import { NAV_LINKS } from "@/components/navbar/constants";
  */
 export const DynamicIsland = () => {
   return (
-    <nav className="absolute left-1/2 hidden h-11 -translate-x-1/2 items-center gap-1 rounded-full border-[1px] border-white/20 bg-white/30 p-1 backdrop-blur-md lg:flex">
+    <nav className="absolute left-1/2 hidden h-11 -translate-x-1/2 items-center gap-1 rounded-full border-2 border-foreground bg-background p-1 shadow-brutal-sm lg:flex">
       {NAV_LINKS.map((link) => (
         <Link
           key={link.label}

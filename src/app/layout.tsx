@@ -8,6 +8,7 @@ import {
 import "./globals.css";
 import { ReactNode } from "react";
 import Navbar from "@/components/navbar/Navbar";
+import { CartProvider } from "@/contexts/CartContext";
 
 // Body copy, paragraphs
 const montserrat = Montserrat({
@@ -60,8 +61,10 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${archivoBlack.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        <Navbar />
-        {children}
+        <CartProvider>
+          <Navbar />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
