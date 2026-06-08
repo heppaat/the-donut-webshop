@@ -1,6 +1,6 @@
 import Image from "next/image";
 import DonutSquare from "/public/donut_square.png";
-import { Donut } from "@/components/landing/donuts";
+import { Donut } from "@/components/landing/_components/shop/donuts";
 
 export const DonutCard = ({ name, flavor, price, hue, tag }: Donut) => {
   return (

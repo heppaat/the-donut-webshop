@@ -23,7 +23,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.3fr_1fr] md:items-center lg:gap-20">
           {/* Text column */}
           <div>
-            <h2 className="font-display text-5xl leading-display tracking-display text-foreground md:text-7xl">
+            <h2 className="font-display text-[clamp(3rem,6vw,5.5rem)] leading-display tracking-display text-foreground">
               We believe a donut <br />
               should make you{" "}
               <span className="font-accent italic text-primary">

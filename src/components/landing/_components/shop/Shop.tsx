@@ -1,5 +1,5 @@
-import { DONUTS } from "@/components/landing/donuts";
-import { DonutCard } from "@/components/landing/DonutCard";
+import { DONUTS } from "@/components/landing/_components/shop/donuts";
+import { DonutCard } from "@/components/landing/_components/shop/DonutCard";
 
 function Shop() {
   return (
@@ -15,7 +15,7 @@ function Shop() {
               <span className="h-0.5 w-7 bg-primary" />
               <span>(03) The menu</span>
             </div>
-            <h2 className="font-display text-5xl leading-display tracking-display text-foreground md:text-8xl">
+            <h2 className="font-display text-[clamp(3.5rem,8vw,7.5rem)] leading-display tracking-display text-foreground">
               Pick your <br />
               <span className="font-accent italic text-primary">pleasure.</span>
             </h2>

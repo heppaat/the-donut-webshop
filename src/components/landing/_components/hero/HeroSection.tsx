@@ -3,7 +3,7 @@ import HeroRoad from "/public/road-desktop.png";
 import EatText from "/public/eat.png";
 import DonutText from "/public/donut.png";
 import DonutImage from "/public/donut_square.png";
-import { Marquee } from "@/components/landing/Marquee";
+import { Marquee } from "@/components/landing/_components/hero/Marquee";
 
 function HeroSection() {
   return (
