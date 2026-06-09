@@ -12,7 +12,7 @@ export const DonutCard = ({ name, flavor, price, hue, tag }: Donut) => {
       >
         {/* Tag chip */}
         {tag && (
-          <span className="absolute left-3.5 top-3.5 z-20 rounded-full bg-foreground px-3 py-1 font-mono text-2xs font-bold uppercase tracking-widest text-background">
+          <span className="absolute top-3.5 left-3.5 z-20 rounded-full bg-foreground px-3 py-1 font-mono text-2xs font-bold tracking-widest text-background uppercase">
             {tag}
           </span>
         )}
@@ -24,7 +24,7 @@ export const DonutCard = ({ name, flavor, price, hue, tag }: Donut) => {
           fill
           sizes="(max-width: 768px) 100vw, 300px"
           style={{ filter: `hue-rotate(${hue - 320}deg)` }}
-          className="z-10 object-contain p-6 transition-transform duration-300 ease-out group-hover:-rotate-6 group-hover:scale-105"
+          className="z-10 object-contain p-6 transition-transform duration-300 ease-out group-hover:scale-105 group-hover:-rotate-6"
         />
       </div>
 

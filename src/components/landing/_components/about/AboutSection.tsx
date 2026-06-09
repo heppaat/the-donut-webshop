@@ -15,18 +15,18 @@ export default function AboutSection() {
     >
       <div className="relative mx-auto max-w-7xl">
         {/* Section label */}
-        <div className="mb-6 flex items-center gap-3 font-mono text-xs uppercase tracking-label text-primary">
+        <div className="mb-6 flex items-center gap-3 font-mono text-xs tracking-label text-primary uppercase">
           <span className="h-0.5 w-7 bg-primary" />
           <span>(02) About us</span>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.3fr_1fr] md:items-center lg:gap-20">
+        <div className="grid grid-cols-1 gap-12 md:items-center lg:grid-cols-[1.3fr_1fr] lg:gap-20">
           {/* Text column */}
           <div>
             <h2 className="font-display text-[clamp(3rem,6vw,5.5rem)] leading-display tracking-display text-foreground">
               We believe a donut <br />
               should make you{" "}
-              <span className="font-accent italic text-primary">
+              <span className="font-accent text-primary italic">
                 smile
               </span>{" "}
               <br />
@@ -46,7 +46,7 @@ export default function AboutSection() {
                   <div className="font-display text-5xl leading-none tracking-display text-foreground sm:text-6xl">
                     {n}
                   </div>
-                  <div className="mt-2 whitespace-pre-line font-mono text-xs uppercase leading-snug text-foreground/60">
+                  <div className="mt-2 font-mono text-xs leading-snug whitespace-pre-line text-foreground/60 uppercase">
                     {label}
                   </div>
                 </div>
@@ -57,7 +57,7 @@ export default function AboutSection() {
           {/* Sticker collage */}
           <div className="relative aspect-[1/1.1]">
             {/* Big pink card — donut stays static */}
-            <div className="absolute left-[5%] top-[5%] h-[75%] w-[75%] overflow-hidden rounded-3xl border-2 border-foreground bg-primary shadow-brutal-lg">
+            <div className="absolute top-[5%] left-[5%] h-[75%] w-[75%] overflow-hidden rounded-3xl border-2 border-foreground bg-primary shadow-brutal-lg">
               <Image
                 src={DonutSquare}
                 alt="A handmade donut"
@@ -68,7 +68,7 @@ export default function AboutSection() {
             </div>
 
             {/* Sticker A — spinning badge */}
-            <div className="absolute right-[8%] top-0 grid size-[140px] animate-spin-slow place-items-center rounded-full border-2 border-foreground bg-secondary text-center font-display text-base leading-[1.1] text-foreground">
+            <div className="animate-spin-slow absolute top-0 right-[8%] grid size-[140px] place-items-center rounded-full border-2 border-foreground bg-secondary text-center font-display text-base leading-[1.1] text-foreground">
               <span>
                 HAND-
                 <br />
@@ -79,7 +79,7 @@ export default function AboutSection() {
             </div>
 
             {/* Sticker B — note to self */}
-            <div className="absolute bottom-[8%] right-0 max-w-[220px] -rotate-[4deg] rounded-xl border-2 border-foreground bg-background px-5 py-3.5 font-mono text-xs leading-relaxed text-foreground shadow-[6px_6px_0_var(--primary)]">
+            <div className="absolute right-0 bottom-[8%] max-w-[220px] -rotate-[4deg] rounded-xl border-2 border-foreground bg-background px-5 py-3.5 font-mono text-xs leading-relaxed text-foreground shadow-[6px_6px_0_var(--primary)]">
               <strong className="mb-1.5 block font-display text-sm">
                 ✦ NOTE TO SELF
               </strong>
@@ -88,7 +88,7 @@ export default function AboutSection() {
             </div>
 
             {/* Sticker C — since 2024 */}
-            <div className="absolute bottom-[2%] left-0 -rotate-[8deg] rounded-full bg-foreground px-4 py-2 font-mono text-[11px] uppercase tracking-[0.15em] text-background">
+            <div className="absolute bottom-[2%] left-0 -rotate-[8deg] rounded-full bg-foreground px-4 py-2 font-mono text-[11px] tracking-[0.15em] text-background uppercase">
               ★ since 2024
             </div>
           </div>

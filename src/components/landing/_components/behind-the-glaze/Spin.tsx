@@ -49,7 +49,7 @@ export default function Spin() {
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1fr]">
         {/* Copy + controls */}
         <div>
-          <div className="mb-6 flex items-center gap-3 font-mono text-xs uppercase tracking-label text-secondary">
+          <div className="mb-6 flex items-center gap-3 font-mono text-xs tracking-label text-secondary uppercase">
             <span className="h-0.5 w-7 bg-secondary" />
             <span>(04) Behind the glaze</span>
           </div>
@@ -58,7 +58,7 @@ export default function Spin() {
             Spin it. <br />
             Sniff it.
             <br />
-            <span className="font-accent italic text-secondary">Send it.</span>
+            <span className="font-accent text-secondary italic">Send it.</span>
           </h2>
 
           <p className="mt-7 max-w-[460px] text-lg leading-relaxed text-background/70">
@@ -66,12 +66,12 @@ export default function Spin() {
             at it from every angle. The 3D model is real. The donut is realer.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex w-full flex-wrap gap-3">
             <button
               type="button"
               onClick={() => setSpinning((s) => !s)}
               className={cn(
-                "rounded-full border-2 border-primary px-6 py-3 font-display text-sm transition-colors duration-150",
+                "w-full min-w-44 rounded-full border-2 border-primary px-6 py-3 font-display text-sm transition-colors duration-150 sm:w-fit",
                 spinning
                   ? "bg-primary text-primary-foreground"
                   : "bg-transparent text-background hover:bg-primary/20"
@@ -82,13 +82,13 @@ export default function Spin() {
             <button
               type="button"
               onClick={() => controlsRef.current?.reset()}
-              className="rounded-full border-2 border-background/30 px-6 py-3 font-display text-sm text-background transition-colors duration-150 hover:border-background/70"
+              className="w-full rounded-full border-2 border-background/30 px-6 py-3 font-display text-sm text-background transition-colors duration-150 hover:border-background/70 sm:w-fit"
             >
               ↺ reset
             </button>
           </div>
 
-          <div className="mt-8 font-mono text-2xs uppercase tracking-label text-background/50">
+          <div className="mt-8 font-mono text-2xs tracking-label text-background/50 uppercase">
             ▸ click + drag to orbit · auto-spins on its own
           </div>
         </div>

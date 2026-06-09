@@ -30,7 +30,7 @@ export const Marquee = ({
   return (
     <div
       className={cn(
-        "marquee select-none overflow-hidden whitespace-nowrap border-y-[3px] border-foreground bg-secondary py-2 sm:py-3.5 font-display uppercase tracking-[0.02em] text-foreground",
+        "marquee overflow-hidden border-y-[3px] border-foreground bg-secondary py-2 font-display tracking-[0.02em] whitespace-nowrap text-foreground uppercase select-none sm:py-3.5",
         className
       )}
     >
@@ -46,7 +46,7 @@ export const Marquee = ({
             className="flex flex-none items-center"
           >
             {items.map((item, i) => (
-              <li key={i} className="px-3 sm:px-7 text-base sm:text-[22px]">
+              <li key={i} className="px-3 text-base sm:px-7 sm:text-[22px]">
                 {item}{" "}
                 <span className="opacity-60" aria-hidden>
                   ✦

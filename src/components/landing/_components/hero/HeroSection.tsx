@@ -9,21 +9,21 @@ function HeroSection() {
   return (
     <section
       id="landing-page-hero"
-      className="relative flex flex-col justify-center items-center bg-primary w-full min-h-dvh scroll-mt-24"
+      className="relative flex min-h-dvh w-full scroll-mt-24 flex-col items-center justify-center bg-primary"
     >
-      <div className="relative h-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center px-4 gap-10">
+      <div className="relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center gap-10 px-4 md:flex-row">
         <div className="flex flex-col">
           <Image
             src={EatText}
             alt="eat text header"
             priority
-            className="w-full h-auto max-w-[300px]"
+            className="h-auto w-full max-w-[300px]"
           />
           <Image
             src={DonutText}
             alt="donut text header"
             priority
-            className="w-full h-auto max-w-[500px]"
+            className="h-auto w-full max-w-[500px]"
           />
         </div>
         {/*Donut Image*/}
@@ -32,7 +32,7 @@ function HeroSection() {
             src={DonutImage}
             alt="donut hero"
             priority
-            className="w-full h-auto"
+            className="h-auto w-full"
           />
         </div>
         {/* Donut Animation Container */}
@@ -49,13 +49,13 @@ function HeroSection() {
           </div>
         </div>*/}
       </div>
-      <div className="absolute bottom-0 left-0 right-0 z-20">
+      <div className="absolute right-0 bottom-0 left-0 z-20">
         <div className="mx-auto max-w-7xl">
           <Image
             src={HeroRoad}
             alt="hero bottom road"
             priority
-            className="w-full h-auto max-h-[100px]"
+            className="h-auto max-h-[100px] w-full"
           />
         </div>
         <Marquee />

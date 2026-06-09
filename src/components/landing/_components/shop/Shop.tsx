@@ -11,13 +11,13 @@ function Shop() {
         {/* Header */}
         <div className="mb-12 flex flex-wrap items-end justify-between gap-8 md:mb-14">
           <div>
-            <div className="mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-primary">
+            <div className="mb-4 flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-primary uppercase">
               <span className="h-0.5 w-7 bg-primary" />
               <span>(03) The menu</span>
             </div>
             <h2 className="font-display text-[clamp(3.5rem,8vw,7.5rem)] leading-display tracking-display text-foreground">
               Pick your <br />
-              <span className="font-accent italic text-primary">pleasure.</span>
+              <span className="font-accent text-primary italic">pleasure.</span>
             </h2>
           </div>
           <p className="max-w-[360px] font-mono text-sm leading-relaxed text-foreground/60">

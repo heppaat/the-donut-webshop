@@ -8,6 +8,7 @@ import {
 import "./globals.css";
 import { ReactNode } from "react";
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 import { CartProvider } from "@/contexts/CartContext";
 
 // Body copy, paragraphs
@@ -64,6 +65,7 @@ export default function RootLayout({
         <CartProvider>
           <Navbar />
           {children}
+          <Footer />
         </CartProvider>
       </body>
     </html>

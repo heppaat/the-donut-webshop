@@ -1,23 +1,23 @@
 @import "tailwindcss";
-@import "./theme.css";       /* design tokens (@theme) */
-@import "./animations.css";  /* keyframes + animation classes */
-@import "./components.css";  /* reusable component classes (.nav-link …) */
+@import "./theme.css"; /* design tokens (@theme) */
+@import "./animations.css"; /* keyframes + animation classes */
+@import "./components.css"; /* reusable component classes (.nav-link …) */
 
 /* ==========================================================================
    Global base styles
    ========================================================================== */
 
 html {
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

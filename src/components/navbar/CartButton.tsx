@@ -22,7 +22,7 @@ export const CartButton = ({
     >
       <ShoppingCart className="size-5" strokeWidth={2} />
       {count > 0 && (
-        <span className="absolute -right-1 -top-1 grid h-5 min-w-5 place-items-center rounded-full border-2 border-white bg-primary px-1 font-mono text-[11px] font-bold text-primary-foreground">
+        <span className="absolute -top-1 -right-1 grid h-5 min-w-5 place-items-center rounded-full border-2 border-white bg-primary px-1 font-mono text-[11px] font-bold text-primary-foreground">
           {count}
         </span>
       )}
