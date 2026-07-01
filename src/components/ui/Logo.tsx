@@ -2,6 +2,7 @@ import Image, { ImageProps } from "next/image";
 import LogoWithText from "/public/Logo/donut-logo-text.png";
 import JustLogo from "/public/Logo/donut-logo.png";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type LogoProps = {
   className?: string;
@@ -30,11 +31,17 @@ const Logo = ({
       src={src}
       alt="Logo"
       style={logoStyle}
-      className={className}
+      className={cn("shrink-0", className)}
       priority
     />
   );
 
-  return isLink ? <Link href="/">{image}</Link> : image;
+  return isLink ? (
+    <Link href="/" className="shrink-0">
+      {image}
+    </Link>
+  ) : (
+    image
+  );
 };
 export default Logo;

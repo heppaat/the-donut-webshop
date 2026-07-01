@@ -11,6 +11,9 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Suppress iOS Safari's gray tap-highlight box; our own active: states
+     (e.g. the mobile menu's magenta press feedback) provide the tap cue. */
+  -webkit-tap-highlight-color: transparent;
 }
 
 @layer base {

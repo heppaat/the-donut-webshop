@@ -9,7 +9,7 @@ function HeroSection() {
   return (
     <section
       id="landing-page-hero"
-      className="relative flex min-h-dvh w-full scroll-mt-24 flex-col items-center justify-center bg-primary"
+      className="relative isolate flex min-h-dvh w-full scroll-mt-24 flex-col items-center justify-center bg-primary"
     >
       <div className="relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center gap-10 px-4 md:flex-row">
         <div className="flex flex-col">

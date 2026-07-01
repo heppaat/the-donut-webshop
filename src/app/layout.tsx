@@ -7,9 +7,9 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
-import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { CartProvider } from "@/contexts/CartContext";
+import NavBar from "@/components/navbar/NavBar";
 
 // Body copy, paragraphs
 const montserrat = Montserrat({
@@ -63,7 +63,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${archivoBlack.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
         <CartProvider>
-          <Navbar />
+          <NavBar />
           {children}
           <Footer />
         </CartProvider>

@@ -11,7 +11,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative scroll-mt-24 overflow-hidden bg-background px-6 py-20 md:py-30"
+      className="relative isolate scroll-mt-24 overflow-hidden bg-background px-6 py-20 md:py-30"
     >
       <div className="relative mx-auto max-w-7xl">
         {/* Section label */}

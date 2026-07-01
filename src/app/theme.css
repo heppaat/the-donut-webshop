@@ -102,6 +102,10 @@
      → text-2xs */
   --text-2xs: 0.625rem;
 
+  /* Custom breakpoint — adds the `tablet:` responsive variant alongside
+     Tailwind's defaults (sm/md/lg/…). 56.25rem = 900px. */
+  --breakpoint-tablet: 56.25rem;
+
   /* Font families (loaded via next/font in app/layout.tsx) */
   --font-sans:
     var(--font-montserrat), system-ui, sans-serif; /* body copy -> font-sans */

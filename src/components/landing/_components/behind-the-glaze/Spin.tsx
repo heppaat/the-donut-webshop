@@ -34,7 +34,7 @@ export default function Spin() {
   return (
     <section
       id="spin"
-      className="relative scroll-mt-24 overflow-hidden bg-foreground px-6 py-20 text-background md:py-30"
+      className="relative isolate scroll-mt-24 overflow-hidden bg-foreground px-6 py-20 text-background md:py-30"
     >
       {/* Magenta radial glow */}
       <div

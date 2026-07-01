@@ -5,7 +5,7 @@ function Shop() {
   return (
     <section
       id="shop"
-      className="relative scroll-mt-24 border-y-2 border-foreground bg-background px-6 py-20 md:py-30"
+      className="relative isolate scroll-mt-24 border-y-2 border-foreground bg-background px-6 py-20 md:py-30"
     >
       <div className="mx-auto max-w-7xl">
         {/* Header */}

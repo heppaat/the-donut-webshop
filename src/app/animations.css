@@ -84,3 +84,83 @@
     animation: none;
   }
 }
+
+/* Mobile menu drawer — the solid panel appears/disappears instantly (mounted &
+   unmounted by React, no animation of its own); only the items move. They snap
+   in from the left, staggered top→bottom, and on close `.is-closing` retracts
+   them back out, staggered bottom→top (true reverse) — then the panel unmounts.
+   The stagger is driven by inline `--index` (0-based) + `--total` so it scales
+   to any NAV_LINKS length. CLOSE_ANIMATION_MS in MobileHeader.tsx must cover the
+   items' retract (last item out at (total-1)*0.08s delay + 0.36s = 0.6s @ 4). */
+@keyframes mobileMenuItemSnap {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes mobileMenuItemRetract {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-110%);
+  }
+}
+
+.mobile-menu-item {
+  transform: translateX(-110%);
+  /* Overshoot bezier on entry — snaps past and settles. */
+  animation: mobileMenuItemSnap 0.48s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: calc(0.12s + var(--index) * 0.08s);
+}
+.mobile-menu-item.is-closing {
+  transform: translateX(0);
+  /* Accelerating ease-in on exit; reverse-order delay (bottom leaves first). */
+  animation: mobileMenuItemRetract 0.36s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+  animation-delay: calc((var(--total) - 1 - var(--index)) * 0.08s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu-item,
+  .mobile-menu-item.is-closing {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Page-dim overlay — the frosted scrim behind an open menu/drawer. A modern
+   glass accent, so it fades (smooth) rather than snapping like the brutalist
+   panels. Fade-out (0.3s) finishes well inside CLOSE_ANIMATION_MS (0.6s), so
+   the scrim is gone before the parent unmounts it. */
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes overlayFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.page-dim-overlay {
+  animation: overlayFadeIn 0.25s ease-out forwards;
+}
+.page-dim-overlay.is-closing {
+  animation: overlayFadeOut 0.3s ease-in forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-dim-overlay,
+  .page-dim-overlay.is-closing {
+    animation: none;
+  }
+}
