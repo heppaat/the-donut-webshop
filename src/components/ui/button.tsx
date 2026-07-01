@@ -55,12 +55,21 @@ function Button({
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     >
-      {icon && (
-        <span className={cn("flex items-center", children && "mr-2")}>
-          {icon}
-        </span>
+      {/* With `asChild`, Slot requires a single child — pass `children`
+          through untouched (the caller's element owns its own content). The
+          `icon` slot only applies to the plain <button> render. */}
+      {asChild ? (
+        children
+      ) : (
+        <>
+          {icon && (
+            <span className={cn("flex items-center", children && "mr-2")}>
+              {icon}
+            </span>
+          )}
+          {children}
+        </>
       )}
-      {children}
     </Comp>
   );
 }
