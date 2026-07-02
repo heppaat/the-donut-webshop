@@ -10,6 +10,7 @@ import { ReactNode } from "react";
 import Footer from "@/components/footer/Footer";
 import { CartProvider } from "@/contexts/CartContext";
 import NavBar from "@/components/navbar/NavBar";
+import { OrderDrawer } from "@/components/cart/OrderDrawer";
 
 // Body copy, paragraphs
 const montserrat = Montserrat({
@@ -66,6 +67,7 @@ export default function RootLayout({
           <NavBar />
           {children}
           <Footer />
+          <OrderDrawer />
         </CartProvider>
       </body>
     </html>

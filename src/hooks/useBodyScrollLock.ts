@@ -4,9 +4,13 @@ import { useEffect } from "react";
 /**
  * Freezes page scroll while `locked` is true (an open mobile menu, drawer, or
  * modal), restoring the body's previous inline styles on unlock/unmount.
- * Compensates for the now-hidden scrollbar with matching right padding so the
- * page doesn't shift horizontally when the lock engages (a no-op on mobile,
- * where scrollbars are overlaid and take up no width).
+ *
+ * We rely on `scrollbar-gutter: stable` (globals.css) to keep the layout width
+ * constant when the scrollbar is hidden — that's what stops the fixed navbar
+ * from shifting sideways, which body padding alone can't fix (a fixed element
+ * is anchored to the viewport, out of reach of the body's padding box). The
+ * manual padding fallback below only runs on older engines without gutter
+ * support; where the gutter is reserved, adding it would itself shift content.
  */
 export const useBodyScrollLock = (locked: boolean) => {
   useEffect(() => {
@@ -16,13 +20,18 @@ export const useBodyScrollLock = (locked: boolean) => {
     const prevOverflow = body.style.overflow;
     const prevPaddingRight = body.style.paddingRight;
 
-    // Width the scrollbar occupied (0 on overlay-scrollbar devices).
-    const scrollbarWidth = window.innerWidth - body.clientWidth;
-
     body.style.overflow = "hidden";
-    if (scrollbarWidth > 0) {
-      const basePadding = parseFloat(getComputedStyle(body).paddingRight) || 0;
-      body.style.paddingRight = `${basePadding + scrollbarWidth}px`;
+
+    const gutterReserved =
+      typeof CSS !== "undefined" && CSS.supports("scrollbar-gutter", "stable");
+    if (!gutterReserved) {
+      // Width the scrollbar occupied (0 on overlay-scrollbar devices).
+      const scrollbarWidth = window.innerWidth - body.clientWidth;
+      if (scrollbarWidth > 0) {
+        const basePadding =
+          parseFloat(getComputedStyle(body).paddingRight) || 0;
+        body.style.paddingRight = `${basePadding + scrollbarWidth}px`;
+      }
     }
 
     return () => {

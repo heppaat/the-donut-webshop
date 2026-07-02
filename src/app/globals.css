@@ -14,6 +14,13 @@ html {
   /* Suppress iOS Safari's gray tap-highlight box; our own active: states
      (e.g. the mobile menu's magenta press feedback) provide the tap cue. */
   -webkit-tap-highlight-color: transparent;
+  /* Always reserve the scrollbar's gutter. When a drawer/menu locks scroll
+     (overflow:hidden, see useBodyScrollLock) the classic scrollbar vanishes;
+     without a reserved gutter the layout viewport widens by the scrollbar
+     width, and the fixed navbar — anchored to the viewport, so body-padding
+     compensation can't reach it — shifts sideways. A stable gutter keeps the
+     width constant, so nothing (body content or fixed headers) moves. */
+  scrollbar-gutter: stable;
 }
 
 @layer base {

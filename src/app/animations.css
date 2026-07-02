@@ -164,3 +164,38 @@
     animation: none;
   }
 }
+
+/* Order drawer — the right-side "Your box" modal panel. A solid surface, but
+   unlike the brutalist menu card it *slides* in from the right (a drawer reads
+   as a physical panel entering) and retracts on `.is-closing` before the parent
+   unmounts it. CLOSE_ANIMATION_MS in OrderDrawer.tsx must cover the retract. */
+@keyframes orderDrawerIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes orderDrawerOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.order-drawer {
+  animation: orderDrawerIn 0.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+.order-drawer.is-closing {
+  animation: orderDrawerOut 0.35s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .order-drawer,
+  .order-drawer.is-closing {
+    animation: none;
+  }
+}

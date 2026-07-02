@@ -1,8 +1,9 @@
 import Image from "next/image";
 import DonutSquare from "/public/donut_square.png";
 import { Donut } from "@/components/landing/_components/shop/donuts";
+import { AddToOrderButton } from "@/components/landing/_components/shop/AddToOrderButton";
 
-export const DonutCard = ({ name, flavor, price, hue, tag }: Donut) => {
+export const DonutCard = ({ id, name, flavor, price, hue, tag }: Donut) => {
   return (
     <div className="group flex flex-col overflow-hidden rounded-3xl border-2 border-foreground bg-background shadow-brutal transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-brutal-lg">
       {/* Image area — pastel tint per donut */}
@@ -42,13 +43,7 @@ export const DonutCard = ({ name, flavor, price, hue, tag }: Donut) => {
           {flavor}
         </p>
 
-        {/* TODO: wire to cart (addItem) — intentionally inert for now */}
-        <button
-          type="button"
-          className="mt-3 flex items-center justify-center gap-2 rounded-full border-2 border-foreground bg-foreground px-4 py-3 font-display text-sm text-background transition-colors duration-150 hover:border-primary hover:bg-primary"
-        >
-          <span aria-hidden>＋</span> Add to order
-        </button>
+        <AddToOrderButton id={id} name={name} />
       </div>
     </div>
   );
