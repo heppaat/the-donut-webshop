@@ -8,11 +8,13 @@ import Logo from "@/components/ui/Logo";
  */
 export const NavBrand = () => {
   return (
-    <Link href="/" className="flex h-12 items-center gap-4">
-      <Logo isJustLogo logoHeight="46px" />
-      <p className="hidden font-display text-2xl text-foreground tablet:block">
-        donut.shop
-      </p>
+    <Link href="/" className="flex h-11 items-center gap-4">
+      <div className="flex h-full items-center gap-2 rounded-full border-2 border-foreground bg-white px-4 shadow-brutal-sm">
+        <Logo isJustLogo logoHeight="30px" />
+        <p className="hidden font-display text-2xl text-foreground tablet:block">
+          donut.shop
+        </p>
+      </div>
     </Link>
   );
 };
