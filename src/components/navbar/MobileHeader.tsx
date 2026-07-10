@@ -6,6 +6,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 import { NavBrand } from "@/components/navbar/NavBrand";
+import { CartButton } from "@/components/navbar/CartButton";
 import { MenuToggleButton } from "@/components/navbar/MenuToggleButton";
 import { MobileMenuCard } from "@/components/navbar/MobileMenuCard";
 import { PageDimOverlay } from "@/components/navbar/PageDimOverlay";
@@ -108,11 +109,18 @@ export const MobileHeader = () => {
         {/* `relative` so the absolutely-positioned MobileMenuCard anchors here. */}
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6">
           <NavBrand />
-          <MenuToggleButton
-            isOpen={isMobileOpen}
-            isClosing={isClosing}
-            onToggle={toggleMobileMenu}
-          />
+          {/* Cart + menu grouped on the right. The cart is an action (opens the
+              OrderDrawer), not a nav target, so it lives here rather than in
+              NAV_LINKS — mirrors the desktop CartButton in NavActions and keeps
+              the mobile menu list a pure set of anchor links. */}
+          <div className="flex items-center gap-1">
+            <CartButton />
+            <MenuToggleButton
+              isOpen={isMobileOpen}
+              isClosing={isClosing}
+              onToggle={toggleMobileMenu}
+            />
+          </div>
           <MobileMenuCard
             isOpen={isMobileOpen}
             isClosing={isClosing}

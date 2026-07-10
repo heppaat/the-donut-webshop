@@ -1,5 +1,6 @@
 import { DONUTS } from "@/components/landing/_components/shop/donuts";
 import { DonutCard } from "@/components/landing/_components/shop/DonutCard";
+import { AccentReveal } from "@/components/landing/_components/AccentReveal";
 
 function Shop() {
   return (
@@ -17,7 +18,9 @@ function Shop() {
             </div>
             <h2 className="font-display text-[clamp(3.5rem,8vw,7.5rem)] leading-display tracking-display text-foreground">
               Pick your <br />
-              <span className="font-accent text-primary italic">pleasure.</span>
+              <AccentReveal className="font-accent text-primary italic">
+                pleasure.
+              </AccentReveal>
             </h2>
           </div>
           <p className="max-w-[360px] font-mono text-sm leading-relaxed text-foreground/60">

@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { Center, Environment, OrbitControls, useGLTF } from "@react-three/drei";
 import { ComponentRef, Suspense, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { AccentReveal } from "@/components/landing/_components/AccentReveal";
 
 // Two knobs decide how the donut sits in the stage:
 //   • CAMERA_DISTANCE — the framing / "padding" knob. Smaller = camera closer
@@ -58,7 +59,9 @@ export default function Spin() {
             Spin it. <br />
             Sniff it.
             <br />
-            <span className="font-accent text-secondary italic">Send it.</span>
+            <AccentReveal className="font-accent text-secondary italic">
+              Send it.
+            </AccentReveal>
           </h2>
 
           <p className="mt-7 max-w-[460px] text-lg leading-relaxed text-background/70">

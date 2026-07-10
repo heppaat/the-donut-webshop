@@ -1,5 +1,6 @@
 import Image from "next/image";
 import DonutSquare from "/public/donut_square.png";
+import { AccentReveal } from "@/components/landing/_components/AccentReveal";
 
 const STATS = [
   { n: "6", label: "flavors,\nrotating weekly" },
@@ -26,9 +27,9 @@ export default function AboutSection() {
             <h2 className="font-display text-[clamp(3rem,6vw,5.5rem)] leading-display tracking-display text-foreground">
               We believe a donut <br />
               should make you{" "}
-              <span className="font-accent text-primary italic">
+              <AccentReveal className="font-accent text-primary italic">
                 smile
-              </span>{" "}
+              </AccentReveal>{" "}
               <br />
               before you bite it.
             </h2>

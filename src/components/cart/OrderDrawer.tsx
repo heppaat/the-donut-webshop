@@ -128,7 +128,7 @@ export const OrderDrawer = () => {
         aria-labelledby="order-drawer-title"
         onKeyDown={trapFocus}
         className={cn(
-          "order-drawer fixed inset-y-0 right-0 z-[70] flex w-[min(27.5rem,92vw)] flex-col border-l-2 border-foreground bg-background",
+          "order-drawer fixed inset-y-0 right-0 z-[70] flex w-full flex-col border-l-2 border-foreground bg-background md:w-[min(27.5rem,92vw)]",
           isClosing && "is-closing"
         )}
       >
