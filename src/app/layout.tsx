@@ -47,10 +47,32 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://the-donut-webshop.vercel.app"),
   title: "The Donut Webshop",
   description: "Delicious handcrafted donuts delivered fresh to your door",
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "The Donut Webshop",
+    description: "Delicious handcrafted donuts delivered fresh to your door",
+    url: "/",
+    siteName: "donut.shop",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png", // 1200×630 recommended
+        width: 1200,
+        height: 630,
+        alt: "The Donut Webshop",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Donut Webshop",
+    description: "Delicious handcrafted donuts delivered fresh to your door",
+    images: ["/og-image.png"],
   },
 };
 
