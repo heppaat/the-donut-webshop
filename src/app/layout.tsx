@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import {
   Montserrat,
   Archivo_Black,
@@ -52,10 +52,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-};
-
-export const viewport: Viewport = {
-  themeColor: "#d551c1",
 };
 
 export default function RootLayout({
