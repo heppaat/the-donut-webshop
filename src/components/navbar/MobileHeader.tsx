@@ -102,7 +102,7 @@ export const MobileHeader = () => {
       <header
         className={cn(
           // Structure + slide behavior. TODO: fill in color + height/padding.
-          "fixed top-0 left-0 z-50 w-full bg-background/85 py-4 backdrop-blur-md transition-transform duration-300 ease-in-out select-none md:hidden",
+          "fixed top-0 left-0 z-50 w-full bg-background py-2.5 backdrop-blur-md transition-transform duration-300 ease-in-out select-none md:hidden",
           isVisible ? "translate-y-0" : "-translate-y-full"
         )}
       >

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   Montserrat,
   Archivo_Black,
@@ -11,6 +11,7 @@ import Footer from "@/components/footer/Footer";
 import { CartProvider } from "@/contexts/CartContext";
 import NavBar from "@/components/navbar/NavBar";
 import { OrderDrawer } from "@/components/cart/OrderDrawer";
+import { cn } from "@/lib/utils";
 
 // Body copy, paragraphs
 const montserrat = Montserrat({
@@ -53,6 +54,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#d551c1",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -61,7 +66,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${archivoBlack.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        className={cn(
+          montserrat.variable,
+          archivoBlack.variable,
+          playfairDisplay.variable,
+          jetbrainsMono.variable,
+          "font-sans antialiased"
+        )}
       >
         <CartProvider>
           <NavBar />
