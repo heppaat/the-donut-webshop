@@ -62,16 +62,20 @@ export const MobileHeader = () => {
   }, [isMobileOpen, closeMobileMenu]);
 
   // Leaving the mobile viewport: force-close instantly (no exit animation).
+  // Adjusted during render (React's pattern for resetting state when an input
+  // changes) rather than in an effect, which would paint the stale open menu
+  // first and then cascade a second render.
+  if (!isMobileViewport && (isMobileOpen || isClosing)) {
+    setIsMobileOpen(false);
+    setIsClosing(false);
+  }
+
+  // …and drop any pending close timer, so a stale one can't fire later.
   useEffect(() => {
-    if (!isMobileViewport && (isMobileOpen || isClosing)) {
-      if (closeTimerRef.current) {
-        clearTimeout(closeTimerRef.current);
-        closeTimerRef.current = null;
-      }
-      setIsMobileOpen(false);
-      setIsClosing(false);
-    }
-  }, [isMobileViewport, isMobileOpen, isClosing]);
+    if (isMobileViewport || !closeTimerRef.current) return;
+    clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = null;
+  }, [isMobileViewport]);
 
   // Close on Escape.
   useEffect(() => {

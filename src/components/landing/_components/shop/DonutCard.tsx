@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DonutSquare from "/public/donut_square.png";
+import DonutSquare from "@public/donut_square.png";
 import { Donut } from "@/components/landing/_components/shop/donuts";
 import { AddToOrderButton } from "@/components/landing/_components/shop/AddToOrderButton";
 

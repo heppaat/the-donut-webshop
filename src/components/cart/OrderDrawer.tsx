@@ -8,7 +8,7 @@ import {
 } from "react";
 import Image from "next/image";
 import { Minus, Plus, X } from "lucide-react";
-import DonutSquare from "/public/donut_square.png";
+import DonutSquare from "@public/donut_square.png";
 import { DONUTS } from "@/components/landing/_components/shop/donuts";
 import useCart from "@/hooks/useCart";
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
@@ -38,30 +38,26 @@ export const OrderDrawer = () => {
   const { items, addItem, removeItem, isDrawerOpen, closeDrawer } = useCart();
 
   // `visible` = mounted in the DOM (true through the exit animation); `isClosing`
-  // swaps in the retract keyframes. Deriving both from the context boolean keeps
-  // the animation mechanics here and the context a plain toggle.
+  // = still mounted but the context says closed, which swaps in the retract
+  // keyframes. Keeping the animation mechanics here leaves the context a plain
+  // toggle.
   const [visible, setVisible] = useState(isDrawerOpen);
-  const [isClosing, setIsClosing] = useState(false);
+  const isClosing = visible && !isDrawerOpen;
 
   const asideRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Deferred unmount: mount instantly on open; on close, play the retract, then
-  // drop from the DOM after CLOSE_ANIMATION_MS.
+  // Deferred unmount: mount instantly on open (adjusted during render, so the
+  // panel appears in the same render as the toggle); on close, play the
+  // retract, then drop from the DOM after CLOSE_ANIMATION_MS. Reopening
+  // mid-retract flips `isClosing` back off, which cancels the timer.
+  if (isDrawerOpen && !visible) setVisible(true);
+
   useEffect(() => {
-    if (isDrawerOpen) {
-      setVisible(true);
-      setIsClosing(false);
-      return;
-    }
-    if (!visible) return;
-    setIsClosing(true);
-    const timer = setTimeout(() => {
-      setVisible(false);
-      setIsClosing(false);
-    }, CLOSE_ANIMATION_MS);
+    if (!isClosing) return;
+    const timer = setTimeout(() => setVisible(false), CLOSE_ANIMATION_MS);
     return () => clearTimeout(timer);
-  }, [isDrawerOpen, visible]);
+  }, [isClosing]);
 
   useBodyScrollLock(visible);
 

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import HeroRoad from "/public/road-desktop.png";
-import EatText from "/public/eat.png";
-import DonutText from "/public/donut.png";
-import DonutImage from "/public/donut_square.png";
+import HeroRoad from "@public/road-desktop.png";
+import EatText from "@public/eat.png";
+import DonutText from "@public/donut.png";
+import DonutImage from "@public/donut_square.png";
 import { Marquee } from "@/components/landing/_components/hero/Marquee";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -24,13 +24,13 @@ function HeroSection() {
             <Image
               src={EatText}
               alt="Eat"
-              priority
+              loading="eager"
               className="h-auto w-full max-w-[180px] md:max-w-[260px]"
             />
             <Image
               src={DonutText}
               alt="donut"
-              priority
+              loading="eager"
               className="h-auto w-full max-w-[300px] md:max-w-[400px]"
             />
           </h1>
@@ -60,7 +60,8 @@ function HeroSection() {
           <Image
             src={DonutImage}
             alt="Strawberry Sprinkle donut"
-            priority
+            loading="eager"
+            fetchPriority="high"
             className="relative h-auto w-full max-w-[250px] md:max-w-[350px]"
           />
         </div>
@@ -69,7 +70,8 @@ function HeroSection() {
         <Image
           src={HeroRoad}
           alt="Black and white colored road."
-          priority
+          loading="eager"
+          fetchPriority="high"
           className="h-auto max-h-[100px] w-full"
         />
       </div>
