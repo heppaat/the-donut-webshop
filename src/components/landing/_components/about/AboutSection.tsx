@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DonutSquare from "/public/donut_square.png";
+import DonutSquare from "@public/donut_square.png";
 import { AccentReveal } from "@/components/landing/_components/AccentReveal";
 
 const STATS = [
