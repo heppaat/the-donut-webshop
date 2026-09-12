@@ -61,9 +61,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png", // 1200×630 recommended
+        url: "/og-image.jpg", // 1200×630 recommended
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "The Donut Webshop",
       },
     ],
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Donut Webshop",
     description: "Delicious handcrafted donuts delivered fresh to your door",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 

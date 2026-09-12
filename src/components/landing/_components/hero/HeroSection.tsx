@@ -11,9 +11,9 @@ function HeroSection() {
   return (
     <section
       id="landing-page-hero"
-      className="relative isolate flex min-h-dvh w-full scroll-mt-24 flex-col overflow-x-clip bg-primary"
+      className="relative isolate flex min-h-svh w-full scroll-mt-24 flex-col overflow-x-clip bg-primary"
     >
-      <div className="relative mx-auto mt-24 flex w-full max-w-7xl flex-1 flex-col items-center justify-evenly gap-6 px-6 md:mt-36 md:flex-row md:gap-8">
+      <div className="relative mx-auto mt-24 flex w-full max-w-7xl flex-1 flex-col items-center justify-evenly gap-6 px-6 md:mt-36 md:flex-row">
         <div className="flex flex-col">
           <div className="mb-12 hidden w-fit rounded-full border-2 border-foreground bg-secondary px-4 py-1 font-mono text-xs font-medium tracking-label md:block">
             ▸ BEST SELLER · FROM $3.50
