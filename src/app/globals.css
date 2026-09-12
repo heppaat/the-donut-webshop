@@ -27,7 +27,13 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+  /* Magenta body = Safari 26+'s toolbar tint. Safari ignores theme-color now
+     and tints its top/bottom bars from the body background (unless a
+     full-width fixed/sticky element sits at that edge — then it samples that
+     element's background instead). Every section paints its own background,
+     so this only shows in the toolbars and the rubber-band overscroll, where
+     magenta matches the hero above and the footer below. */
   body {
-    @apply bg-background text-foreground;
+    @apply bg-primary text-foreground;
   }
 }

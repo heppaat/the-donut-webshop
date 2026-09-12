@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   Montserrat,
   Archivo_Black,
@@ -75,6 +75,14 @@ export const metadata: Metadata = {
     description: "Delicious handcrafted donuts delivered fresh to your door",
     images: ["/og-image.jpg"],
   },
+};
+
+// Browser-chrome tint for Chrome on Android and Safari on iOS ≤ 18. Safari 26+
+// ignores theme-color and tints from the page's background instead — the
+// magenta `body` background in globals.css does that job there. Keep in sync
+// with `--primary` in theme.css (metadata can't read CSS variables).
+export const viewport: Viewport = {
+  themeColor: "#d551c1",
 };
 
 export default function RootLayout({
